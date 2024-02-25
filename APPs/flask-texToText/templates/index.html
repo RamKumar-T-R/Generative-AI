@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>HTML Form with Placeholders and Left Alignment</title>
+        <style>
+            /* Set margin-left to push the form elements to the right */
+            .form-element {
+                margin-left: 50px;
+            }
+            input[type="text"] {
+            width: 300px;
+            height: 40px;
+        }
+        </style>
+        <script>
+            // Function to change form action
+            function setFormAction(actionURL) {
+                // Get the form element
+                const form = document.getElementById('myForm');
+
+                // Set the action attribute
+                form.action = actionURL;
+            }
+        </script>
+    </head>
+    <body>
+
+            <h1> Welcome to the HR Management Portal</h1><hr><Hr><br><br>
+
+                <form id="myForm" action="" method="post">
+                    <!-- Text input with placeholder -->
+                    <div class="form-element">
+                        <label for="desg">Designation:</label>
+                        <input type="text" id="desg" name="desg" value="{{ desg }}">
+                    </div>
+                    <br>
+
+                    <!-- Suggest button -->
+                    <div class="form-element">
+                        <input type="submit" value="Suggest" onclick="setFormAction('/suggest')">
+                        </div>
+                        <br>
+
+                    <!-- Skills input with placeholder -->
+                    <div class="form-element">
+                        <label for="skills">Skills:</label>
+                        <textarea id="skills" name="skills" rows="10" cols="50">{{ skills }}</textarea>
+                    </div>
+                    <br>
+
+
+
+                    <!-- Textarea with placeholder -->
+                    <div class="form-element">
+                        <label for="jd">Job Description:</label>
+                        <textarea id="jd" rows="10" cols="50" name="jd" size="50">{{ job_desc }}</textarea>
+                    </div>
+                    <br>
+
+                    <!-- Submit Button -->
+                    <div class="form-element">
+                        <input type="submit" value="Submit" onclick="setFormAction('/submit')">
+                    </div>
+
+
+
+
+                </form>
+                <center>
+                <hr> <p>Designed by ABC </p></center><hr>
+
+    </body>
+</html>
